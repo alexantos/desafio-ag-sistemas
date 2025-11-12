@@ -12,9 +12,6 @@ export class MembroService {
     ) { }
 
     async criar(membro: Partial<Membro>): Promise<Membro> {
-        membro.admin = false;
-        membro.criacao = new Date();
-        membro.atualizacao = new Date();
         return this.MembroRepository.save(membro);
     }
 
