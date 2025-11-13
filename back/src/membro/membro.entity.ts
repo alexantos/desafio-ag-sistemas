@@ -20,7 +20,7 @@ export class Membro {
     @Column({ default: false })
     admin: boolean;
 
-    @ManyToOne(() => Empresa, empresa => empresa.membro)
+    @ManyToOne(() => Empresa, empresa => empresa.membro, { nullable: true })
     @JoinColumn()
     empresa: Empresa;
 
