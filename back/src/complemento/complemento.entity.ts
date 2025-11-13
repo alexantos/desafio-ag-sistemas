@@ -16,9 +16,9 @@ export class Complemento {
     @JoinColumn()
     membro: Membro;
 
-    @Column()
-    criacao: Date = new Date();
+    @Column({ default: () => 'CURRENT_TIMESTAMP' })
+    criacao: Date;
 
-    @Column()
-    atualizacao: Date = new Date();
+    @Column({ default: () => 'CURRENT_TIMESTAMP' })
+    atualizacao: Date;
 }

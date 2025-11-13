@@ -6,8 +6,8 @@ export class Convite {
     @PrimaryGeneratedColumn('uuid')
     id: number;
 
-    @Column()
-    token: string;
+    // @Column()
+    // token: string;
     
     @OneToOne(() => Membro, membro => membro.convite)
     @JoinColumn()
