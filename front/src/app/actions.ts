@@ -38,7 +38,7 @@ export async function enviarConvite(membro_id: string) {
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ aprovado: true }),
+    body: JSON.stringify({ convidado: true }),
   });
 
   if (!response_membro.ok) {
@@ -66,7 +66,7 @@ export async function cadastroComplemento(formData: FormData) {
   const telefone = formData.get('telefone');
   const membro = formData.get('membro');
 
-  if (!cpf || !telefone ) {
+  if (!cpf || !telefone) {
     throw new Error('Digite o cpf e o telefone antes de enviar.');
   }
 
@@ -79,6 +79,22 @@ export async function cadastroComplemento(formData: FormData) {
   });
 
   if (!response.ok) {
+    throw new Error('Failed to submit form data.');
+  }
+
+  if (!membro) {
+    throw new Error('Necessário um membro selecionado.');
+  }
+
+  const response_membro = await fetch('http://127.0.0.1:3001/membro/' + membro, {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ aprovado: true }),
+  });
+
+  if (!response_membro.ok) {
     throw new Error('Failed to submit form data.');
   }
 

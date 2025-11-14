@@ -32,7 +32,7 @@ export default async function detalheMembro({ params }: DetailPage) {
                     </div>
                     <div className='flex flex-col invisible'>
                         <label>Motivação</label>
-                        <input className='fixed' name="membro" value={detail.id} />
+                        <input className='fixed' name="membro" readOnly={true} value={detail.id} />
                     </div>
                     <button className='w-full py-2 bg-blue-700 text-white rounded-md cursor-pointer' type="submit">Enviar</button>
                 </form>

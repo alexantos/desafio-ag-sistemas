@@ -21,6 +21,9 @@ export class Membro {
     admin: boolean;
 
     @Column({ default: false })
+    convidado: boolean;
+
+    @Column({ default: false })
     aprovado: boolean;
 
     @ManyToOne(() => Empresa, empresa => empresa.membro, { nullable: true })
