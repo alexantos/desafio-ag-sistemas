@@ -2,7 +2,7 @@
 
 import { enviarConvite } from "@/app/actions";
 
-function DeleteButton({ membro }: any) {
+function DialogConfirmacao({ membro }: any) {
   const handleDelete = () => {
     const isConfirmed = window.confirm('Tem certeza que deseja enviar o convite?');
 
@@ -22,4 +22,4 @@ function DeleteButton({ membro }: any) {
   );
 }
 
-export default DeleteButton;
+export default DialogConfirmacao;

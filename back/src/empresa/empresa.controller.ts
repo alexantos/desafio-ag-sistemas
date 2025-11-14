@@ -7,7 +7,6 @@ export class EmpresaController {
 
     constructor(private readonly empresaService: EmpresaService) { }
 
-
     @Post()
     criar(@Body() empresa: Partial<Empresa>): Promise<Empresa> {
         return this.empresaService.criar(empresa)

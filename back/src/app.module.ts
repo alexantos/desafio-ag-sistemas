@@ -4,7 +4,6 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { MembroModule } from './membro/membro.module';
 import { EmpresaModule } from './empresa/empresa.module';
-import { Complemento } from './complemento/complemento.entity';
 import { ComplementoModule } from './complemento/complemento.module';
 import { ConviteModule } from './convite/convite.module';
 

@@ -6,14 +6,8 @@ interface DetailPage {
     };
 }
 
-async function getMembro(id: string): Promise<any | null> {
-    const res = await fetch(`http://localhost:3001/membro/${id}`);
-    return res.json();
-}
-
 export default async function detalheMembro({ params }: DetailPage) {
     const detail = await params;
-    const todo = await getMembro(detail.id);
 
     return (
         <div>

@@ -5,7 +5,6 @@ import { ConviteService } from './convite.service';
 import { ConviteController } from './convite.controller';
 
 
-
 @Module({
     imports: [TypeOrmModule.forFeature([Convite])],
     providers: [ConviteService],
